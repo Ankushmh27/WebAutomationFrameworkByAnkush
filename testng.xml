@@ -5,6 +5,7 @@
     <classes>
       <class name="testClass.LoginTest"/>
       <class name="testClass.LogoutTest"/>
+      <class name="BasicPractice.SeleniumTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

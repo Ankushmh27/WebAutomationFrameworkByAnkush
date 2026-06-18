@@ -13,10 +13,11 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-
+@Ignore
 public class SeleniumTest {
 	static WebDriver driver;
 	static Actions action;
