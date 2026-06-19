@@ -1,5 +1,6 @@
 package testClass;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseSetup;
@@ -13,5 +14,9 @@ public class LoginTest extends BaseSetup {
     public void userLogin() {
         loginPage = new LoginPage(driver);
         loginPage.login("Admin", "admin123");
+        String actualPageTitle= driver.getTitle();
+        String expectedPageTitle="OrangeHRM";
+        	System.out.println("actualPageTitle: " + driver.getTitle());	
+        Assert.assertEquals(actualPageTitle, expectedPageTitle, "Expected Page Title not matched!");
     }
 }

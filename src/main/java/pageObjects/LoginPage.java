@@ -29,7 +29,5 @@ public class LoginPage {
         password.sendKeys(userPassword);
 
         loginButton.click();
-
-        System.out.println("Page Title: " + driver.getTitle());
     }
 }
