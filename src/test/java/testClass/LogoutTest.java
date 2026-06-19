@@ -1,6 +1,7 @@
 package testClass;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 
 import base.BaseSetup;
 import pageObjects.LoginPage;

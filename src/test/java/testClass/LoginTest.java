@@ -16,7 +16,8 @@ public class LoginTest extends BaseSetup {
         loginPage.login("Admin", "admin123");
         String actualPageTitle= driver.getTitle();
         String expectedPageTitle="OrangeHRM";
-        	System.out.println("actualPageTitle: " + driver.getTitle());	
+        	System.out.println("actualPageTitle: " + driver.getTitle());
         Assert.assertEquals(actualPageTitle, expectedPageTitle, "Expected Page Title not matched!");
+        System.out.println("user is login sucessfully");	
     }
 }
