@@ -4,28 +4,32 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
-public class LoginPage extends BaseSetup{
-	public LoginPage(WebDriver driver) {
-		PageFactory.initElements(driver,this);
-	}
-	@FindBy(name = "username")
-	private WebElement userName;
-	
-	@FindBy(name = "username")
-	private WebElement password;
-	
-	@FindBy(xpath = "//button")
-	private WebElement loginButton;
-	
-	public void login() {
-		userName.sendKeys("Admin");
-		password.sendKeys("admin123");
-		Assert.assertTrue(loginButton.isEnabled(), "Login button is not enable");
-		loginButton.click();
-		String pageTitle = driver.getTitle();
-		System.out.println("pageTitle is: " + pageTitle);
+public class LoginPage {
 
-	}
+    private WebDriver driver;
+
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
+    @FindBy(name = "username")
+    private WebElement username;
+
+    @FindBy(name = "password")
+    private WebElement password;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    private WebElement loginButton;
+
+    public void login(String userName, String userPassword) {
+
+        username.sendKeys(userName);
+        password.sendKeys(userPassword);
+
+        loginButton.click();
+
+        System.out.println("Page Title: " + driver.getTitle());
+    }
 }
