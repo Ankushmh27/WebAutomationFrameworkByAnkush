@@ -4,38 +4,61 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import utilities.BrowserOptionsFactory;
+import utilities.CommonUtility;
+import utilities.ConfigFileReader;
 
 public class BaseSetup {
 
-    protected WebDriver driver;
-    protected WebDriverWait wait;
+	protected WebDriver driver;
+	protected WebDriverWait wait;
+	protected ConfigFileReader config;
+	protected CommonUtility utility;
+	protected ChromeOptions options;
 
-    @BeforeClass
-    public void browserLaunch() {
+	@BeforeClass
+	public void browserLaunch() {
+		WebDriverManager.chromedriver().setup();
 
-        WebDriverManager.chromedriver().setup();
+		config = new ConfigFileReader();
+		wait = new WebDriverWait(driver, Duration.ofSeconds(config.getExplicitWait()));
+		options = new ChromeOptions();
+		String browser = config.getBrowser();
 
-        driver = new ChromeDriver();
+		switch (browser.toLowerCase()) {
 
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		case "chrome":
+			driver = new ChromeDriver(BrowserOptionsFactory.getChromeOptions());
+			break;
 
-        driver.manage().window().maximize();
+		case "firefox":
+			driver = new FirefoxDriver(BrowserOptionsFactory.getFirefoxOptions());
+			break;
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		case "edge":
+			driver = new EdgeDriver(BrowserOptionsFactory.getEdgeOptions());
+			break;
 
-        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-    }
+		default:
+			throw new IllegalArgumentException("Unsupported browser: " + browser);
+		}
+		driver.manage().window().maximize();
+		driver.get(config.getApplicationUrl());
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(config.getImplicitWait()));
+	}
 
-    @AfterClass
-    public void browserClose() {
-
-        if (driver != null) {
-            driver.quit();
-        }
-    }
+	@AfterClass
+	public void browserClose() {
+		if (driver != null) {
+			driver.quit();
+		}
+	}
 }

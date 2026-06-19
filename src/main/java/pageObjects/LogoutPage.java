@@ -13,8 +13,8 @@ import base.BaseSetup;
 
 public class LogoutPage extends BaseSetup {
 
-    public WebDriverWait wait;
-
+    protected WebDriverWait wait;
+   // protected WaitUtility wait; // need to setup wait utilty webriver 
     public LogoutPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -27,11 +27,11 @@ public class LogoutPage extends BaseSetup {
     private WebElement logoutButton;
 
     public void logout() {
-
+//    	wait.waitForClickable(userDropdown).click();//wait setup requires
+//    	wait.waitForVisibility(logoutButton);
+//    	wait.waitForClickable(logoutButton).click();
         wait.until(ExpectedConditions.elementToBeClickable(userDropdown)).click();
-
         wait.until(ExpectedConditions.visibilityOf(logoutButton));
         wait.until(ExpectedConditions.elementToBeClickable(logoutButton)).click();
-
     }
 }

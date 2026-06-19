@@ -5,16 +5,16 @@
     <classes>
       <class name="testClass.LogoutTest">
         <methods>
-          <include name="userLogout"/>
           <include name="browserClose"/>
-          <include name="browserLaunnch"/>
+          <include name="userLogout"/>
+          <include name="browserLaunch"/>
         </methods>
       </class> <!-- testClass.LogoutTest -->
       <class name="testClass.LoginTest">
         <methods>
           <include name="userLogin"/>
           <include name="browserClose"/>
-          <include name="browserLaunnch"/>
+          <include name="browserLaunch"/>
         </methods>
       </class> <!-- testClass.LoginTest -->
     </classes>

@@ -2,34 +2,34 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-19T16:18:43 IST" name="Suite" finished-at="2026-06-19T16:19:17 IST" duration-ms="33490">
+  <suite started-at="2026-06-20T03:05:53 IST" name="Suite" finished-at="2026-06-20T03:06:07 IST" duration-ms="13989">
     <groups>
     </groups>
-    <test started-at="2026-06-19T16:18:43 IST" name="Test" finished-at="2026-06-19T16:19:17 IST" duration-ms="33490">
+    <test started-at="2026-06-20T03:05:53 IST" name="Test" finished-at="2026-06-20T03:06:07 IST" duration-ms="13989">
       <class name="testClass.LoginTest">
-        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:testClass.LoginTest@179ece50]" started-at="2026-06-19T16:18:44 IST" name="browserLaunch" finished-at="2026-06-19T16:18:48 IST" duration-ms="4482" status="PASS">
+        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:testClass.LoginTest@4d1c00d0]" started-at="2026-06-20T03:05:53 IST" name="browserLaunch" finished-at="2026-06-20T03:05:58 IST" duration-ms="4439" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserLaunch -->
-        <test-method signature="userLogin()[pri:0, instance:testClass.LoginTest@179ece50]" started-at="2026-06-19T16:18:48 IST" name="userLogin" finished-at="2026-06-19T16:18:59 IST" duration-ms="10929" status="PASS">
+        <test-method signature="userLogin()[pri:0, instance:testClass.LoginTest@4d1c00d0]" started-at="2026-06-20T03:05:58 IST" name="userLogin" finished-at="2026-06-20T03:06:00 IST" duration-ms="2223" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userLogin -->
-        <test-method is-config="true" signature="browserClose()[pri:0, instance:testClass.LoginTest@179ece50]" started-at="2026-06-19T16:18:59 IST" name="browserClose" finished-at="2026-06-19T16:18:59 IST" duration-ms="431" status="PASS">
+        <test-method is-config="true" signature="browserClose()[pri:0, instance:testClass.LoginTest@4d1c00d0]" started-at="2026-06-20T03:06:00 IST" name="browserClose" finished-at="2026-06-20T03:06:00 IST" duration-ms="359" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserClose -->
       </class> <!-- testClass.LoginTest -->
       <class name="testClass.LogoutTest">
-        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:testClass.LogoutTest@62ddbd7e]" started-at="2026-06-19T16:18:59 IST" name="browserLaunch" finished-at="2026-06-19T16:19:07 IST" duration-ms="7460" status="PASS">
+        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:testClass.LogoutTest@3d285d7e]" started-at="2026-06-20T03:06:00 IST" name="browserLaunch" finished-at="2026-06-20T03:06:04 IST" duration-ms="3052" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserLaunch -->
-        <test-method signature="userLogout()[pri:1, instance:testClass.LogoutTest@62ddbd7e]" started-at="2026-06-19T16:19:07 IST" name="userLogout" finished-at="2026-06-19T16:19:17 IST" duration-ms="9650" status="PASS">
+        <test-method signature="userLogout()[pri:0, instance:testClass.LogoutTest@3d285d7e]" started-at="2026-06-20T03:06:04 IST" name="userLogout" finished-at="2026-06-20T03:06:07 IST" depends-on-methods="testClass.LoginTest.userLogin" duration-ms="3656" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userLogout -->
-        <test-method is-config="true" signature="browserClose()[pri:0, instance:testClass.LogoutTest@62ddbd7e]" started-at="2026-06-19T16:19:17 IST" name="browserClose" finished-at="2026-06-19T16:19:17 IST" duration-ms="464" status="PASS">
+        <test-method is-config="true" signature="browserClose()[pri:0, instance:testClass.LogoutTest@3d285d7e]" started-at="2026-06-20T03:06:07 IST" name="browserClose" finished-at="2026-06-20T03:06:07 IST" duration-ms="208" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserClose -->
