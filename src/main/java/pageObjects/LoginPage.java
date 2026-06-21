@@ -43,7 +43,7 @@ public class LoginPage {
 		loginButton.click();
 	}
 
-	// Return page text
+	// Return dashboard page text
 	public WebElement getDashboardTitle() {
 		return dashboardText;
 	}
