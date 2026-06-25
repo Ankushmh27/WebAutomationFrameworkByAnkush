@@ -1,37 +1,32 @@
 package pageObjects;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import base.BaseSetup;
+import utilities.WaitUtility;
 
 public class LogoutPage extends BaseSetup {
 
-    protected WebDriverWait wait;
-   // protected WaitUtility wait; // need to setup wait utilty webriver 
-    public LogoutPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    }
+	private WaitUtility wait; // need to setup wait utilty webriver
 
-    @FindBy(className = "oxd-userdropdown-tab")
-    private WebElement userDropdown;
+	public LogoutPage(WebDriver driver) {
+		PageFactory.initElements(driver, this);
+	}
 
-    @FindBy(xpath = "//a[text()='Logout']")
-    private WebElement logoutButton;
+	@FindBy(className = "oxd-userdropdown-tab")
+	private WebElement userDropdown;
 
-    public void logout() {
-//    	wait.waitForClickable(userDropdown).click();//wait setup requires
-//    	wait.waitForVisibility(logoutButton);
-//    	wait.waitForClickable(logoutButton).click();
-        wait.until(ExpectedConditions.elementToBeClickable(userDropdown)).click();
-        wait.until(ExpectedConditions.visibilityOf(logoutButton));
-        wait.until(ExpectedConditions.elementToBeClickable(logoutButton)).click();
-    }
+	@FindBy(xpath = "//a[text()='Logout']")
+	private WebElement logoutButton;
+
+	public void logout() {
+		wait = new WaitUtility(driver);
+		wait.webElementToBeClickable(userDropdown);
+		wait.visibilityOfElement(logoutButton);
+		wait.visibilityOfElement(logoutButton).click();
+
+	}
 }

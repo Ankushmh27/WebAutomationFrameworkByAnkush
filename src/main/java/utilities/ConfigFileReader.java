@@ -4,12 +4,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ConfigFileReader {
 	
-	WebDriverWait wait;
-
 	private final Properties properties;
 
 	public ConfigFileReader() {
@@ -43,6 +40,14 @@ public class ConfigFileReader {
 		return properties.getProperty("url");
 	}
 
+	public String getInvalidUsername() {
+		return properties.getProperty("InvalidUsername");
+	}
+
+	public String getInvalidPassword() {
+		return properties.getProperty("InvalidPassword");
+	}
+	
 	public String getUsername() {
 		return properties.getProperty("username");
 	}
@@ -50,7 +55,7 @@ public class ConfigFileReader {
 	public String getPassword() {
 		return properties.getProperty("password");
 	}
-
+	
 	public int getImplicitWait() {
 		return Integer.parseInt(properties.getProperty("implicitWait"));
 	}

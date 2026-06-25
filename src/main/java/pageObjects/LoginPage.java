@@ -42,7 +42,10 @@ public class LoginPage {
 		password.sendKeys(userPassword);
 		loginButton.click();
 	}
-
+	public void clearUsernamePassword() {
+		username.clear();
+		password.clear();
+	}
 	// Return dashboard page text
 	public WebElement getDashboardTitle() {
 		return dashboardText;

@@ -1,39 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-20T03:05:53 IST" name="Suite" finished-at="2026-06-20T03:06:07 IST" duration-ms="13989">
+  <suite started-at="2026-06-25T17:36:45 IST" name="Suite" finished-at="2026-06-25T17:37:20 IST" duration-ms="35047">
     <groups>
+      <group name="Sanity">
+        <method signature="ValidInvalidLogin.loginWithInvalidCredentials()[pri:0, instance:testClass.ValidInvalidLogin@d35dea7]" name="loginWithInvalidCredentials" class="testClass.ValidInvalidLogin"/>
+        <method signature="ValidInvalidLogin.loginWithValidCredentials()[pri:1, instance:testClass.ValidInvalidLogin@d35dea7]" name="loginWithValidCredentials" class="testClass.ValidInvalidLogin"/>
+      </group> <!-- Sanity -->
+      <group name="Regression">
+        <method signature="LoginTest.userLoginTest()[pri:0, instance:testClass.LoginTest@7817fd62]" name="userLoginTest" class="testClass.LoginTest"/>
+        <method signature="LogoutTest.userLogout()[pri:1, instance:testClass.LogoutTest@3bd82cf5]" name="userLogout" class="testClass.LogoutTest"/>
+      </group> <!-- Regression -->
     </groups>
-    <test started-at="2026-06-20T03:05:53 IST" name="Test" finished-at="2026-06-20T03:06:07 IST" duration-ms="13989">
-      <class name="testClass.LoginTest">
-        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:testClass.LoginTest@4d1c00d0]" started-at="2026-06-20T03:05:53 IST" name="browserLaunch" finished-at="2026-06-20T03:05:58 IST" duration-ms="4439" status="PASS">
+    <test started-at="2026-06-25T17:36:45 IST" name="Regression Test" finished-at="2026-06-25T17:37:20 IST" duration-ms="35047">
+      <class name="testClass.ValidInvalidLogin">
+        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:testClass.ValidInvalidLogin@d35dea7]" started-at="2026-06-25T17:37:07 IST" name="browserLaunch" finished-at="2026-06-25T17:37:14 IST" duration-ms="6806" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserLaunch -->
-        <test-method signature="userLogin()[pri:0, instance:testClass.LoginTest@4d1c00d0]" started-at="2026-06-20T03:05:58 IST" name="userLogin" finished-at="2026-06-20T03:06:00 IST" duration-ms="2223" status="PASS">
+        <test-method signature="loginWithInvalidCredentials()[pri:0, instance:testClass.ValidInvalidLogin@d35dea7]" started-at="2026-06-25T17:37:14 IST" name="loginWithInvalidCredentials" finished-at="2026-06-25T17:37:16 IST" duration-ms="2756" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- userLogin -->
-        <test-method is-config="true" signature="browserClose()[pri:0, instance:testClass.LoginTest@4d1c00d0]" started-at="2026-06-20T03:06:00 IST" name="browserClose" finished-at="2026-06-20T03:06:00 IST" duration-ms="359" status="PASS">
+        </test-method> <!-- loginWithInvalidCredentials -->
+        <test-method signature="loginWithValidCredentials()[pri:1, instance:testClass.ValidInvalidLogin@d35dea7]" started-at="2026-06-25T17:37:16 IST" name="loginWithValidCredentials" finished-at="2026-06-25T17:37:20 IST" depends-on-methods="testClass.ValidInvalidLogin.loginWithInvalidCredentials" duration-ms="3212" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithValidCredentials -->
+        <test-method is-config="true" signature="browserClose()[pri:0, instance:testClass.ValidInvalidLogin@d35dea7]" started-at="2026-06-25T17:37:20 IST" name="browserClose" finished-at="2026-06-25T17:37:20 IST" duration-ms="370" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserClose -->
+      </class> <!-- testClass.ValidInvalidLogin -->
+      <class name="testClass.LoginTest">
+        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:testClass.LoginTest@7817fd62]" started-at="2026-06-25T17:36:45 IST" name="browserLaunch" finished-at="2026-06-25T17:36:52 IST" duration-ms="7237" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserLaunch -->
+        <test-method signature="userLoginTest()[pri:0, instance:testClass.LoginTest@7817fd62]" started-at="2026-06-25T17:36:52 IST" name="userLoginTest" finished-at="2026-06-25T17:36:55 IST" duration-ms="2982" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- userLoginTest -->
+        <test-method is-config="true" signature="browserClose()[pri:0, instance:testClass.LoginTest@7817fd62]" started-at="2026-06-25T17:36:55 IST" name="browserClose" finished-at="2026-06-25T17:36:56 IST" duration-ms="459" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserClose -->
       </class> <!-- testClass.LoginTest -->
       <class name="testClass.LogoutTest">
-        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:testClass.LogoutTest@3d285d7e]" started-at="2026-06-20T03:06:00 IST" name="browserLaunch" finished-at="2026-06-20T03:06:04 IST" duration-ms="3052" status="PASS">
+        <test-method is-config="true" signature="browserLaunch()[pri:0, instance:testClass.LogoutTest@3bd82cf5]" started-at="2026-06-25T17:36:56 IST" name="browserLaunch" finished-at="2026-06-25T17:37:02 IST" duration-ms="6691" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserLaunch -->
-        <test-method signature="userLogout()[pri:0, instance:testClass.LogoutTest@3d285d7e]" started-at="2026-06-20T03:06:04 IST" name="userLogout" finished-at="2026-06-20T03:06:07 IST" depends-on-methods="testClass.LoginTest.userLogin" duration-ms="3656" status="PASS">
+        <test-method signature="userLogout()[pri:1, instance:testClass.LogoutTest@3bd82cf5]" started-at="2026-06-25T17:37:02 IST" name="userLogout" finished-at="2026-06-25T17:37:07 IST" depends-on-methods="testClass.LoginTest.userLoginTest" duration-ms="4092" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- userLogout -->
-        <test-method is-config="true" signature="browserClose()[pri:0, instance:testClass.LogoutTest@3d285d7e]" started-at="2026-06-20T03:06:07 IST" name="browserClose" finished-at="2026-06-20T03:06:07 IST" duration-ms="208" status="PASS">
+        <test-method is-config="true" signature="browserClose()[pri:0, instance:testClass.LogoutTest@3bd82cf5]" started-at="2026-06-25T17:37:07 IST" name="browserClose" finished-at="2026-06-25T17:37:07 IST" duration-ms="342" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserClose -->
       </class> <!-- testClass.LogoutTest -->
-    </test> <!-- Test -->
+    </test> <!-- Regression Test -->
   </suite> <!-- Suite -->
 </testng-results>

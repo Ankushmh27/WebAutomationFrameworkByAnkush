@@ -29,7 +29,6 @@ public class BaseSetup {
 		WebDriverManager.chromedriver().setup();
 
 		config = new ConfigFileReader();
-		wait = new WebDriverWait(driver, Duration.ofSeconds(config.getExplicitWait()));
 		options = new ChromeOptions();
 		String browser = config.getBrowser();
 
@@ -50,6 +49,7 @@ public class BaseSetup {
 		default:
 			throw new IllegalArgumentException("Unsupported browser: " + browser);
 		}
+		//wait = new WebDriverWait(driver, Duration.ofSeconds(config.getExplicitWait()));
 		driver.manage().window().maximize();
 		driver.get(config.getApplicationUrl());
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(config.getImplicitWait()));

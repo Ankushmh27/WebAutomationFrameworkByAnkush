@@ -1,27 +1,24 @@
 package testClass;
 
-import java.time.Duration;
-
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.BaseSetup;
 import pageObjects.LoginPage;
 import pageObjects.LogoutPage;
+import utilities.CommonUtility;
+import utilities.WaitUtility;
 
 public class LogoutTest extends BaseSetup {
 
 	LogoutPage logoutPage;
 	LoginPage loginPage;
-	WebDriverWait wait;
-//    WaitUtility wait;
-//    CommonUtility commonUtility;
+	protected WaitUtility wait;
+	protected CommonUtility commonUtility;
 
-	@Test(dependsOnMethods = "testClass.LoginTest.userLogin")
+	@Test(priority = 1, groups = {"Regression"}, dependsOnMethods = "testClass.LoginTest.userLoginTest")
 	public void userLogout() {
-//    	    wait = new WebDriverWait(driver);
+		wait = new WaitUtility(driver);
 		// Initialize login page
 		loginPage = new LoginPage(driver);
 		loginPage.login(config.getUsername(), config.getPassword());
@@ -34,10 +31,8 @@ public class LogoutTest extends BaseSetup {
 		String expectedUrl = config.getexpectedUrlAfterLogout();
 
 		// Wait until URL contains login
-//        wait.waitForUrlContains("/auth/login");
-		wait = new WebDriverWait(driver, Duration.ofSeconds(13));
-		wait.until(ExpectedConditions.urlContains("/auth/login"));
-
+		// wait.until(ExpectedConditions.urlContains("/auth/login"));
+		wait.waitForUrlContains("/auth/login");
 		System.out.println("Current URL: " + currentUrl);
 		Assert.assertEquals(currentUrl, expectedUrl, "Incorrect url! After logout user is NOT on Login page");
 		System.out.println("LOGOUT SUCCESS");

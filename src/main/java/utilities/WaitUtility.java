@@ -10,81 +10,67 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitUtility {
 
-	protected WebDriver driver;
-	protected WebDriverWait wait;
+    private WebDriver driver;
+    private WebDriverWait wait;
 
-	public WaitUtility(WebDriver driver) {
-		this.driver = driver;
-	}
+    public WaitUtility(WebDriver driver) {
+        this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
 
-	// Wait until element is visible
-	public WebElement waitForVisibility(By locator) {
-		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-	}
+    public void visibilityOfElementLocated(By locator) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
 
-	// Wait until WebElement is visible
-	public WebElement waitForVisibility(WebElement element) {
-		return wait.until(ExpectedConditions.visibilityOf(element));
-	}
+    public WebElement visibilityOfElement(WebElement element) {
+        return wait.until(ExpectedConditions.visibilityOf(element));
+    }
 
-	// Wait until element is clickable
-	public WebElement waitForClickable(By locator) {
-		return wait.until(ExpectedConditions.elementToBeClickable(locator));
-	}
+    public WebElement locatorElementToBeClickable(By locator) {
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
 
-	// Wait until WebElement is clickable
-	public WebElement waitForClickable(WebElement element) {
-		return wait.until(ExpectedConditions.elementToBeClickable(element));
-	}
+    public void webElementToBeClickable(WebElement element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+    }
 
-	// Wait until element is present in DOM
-	public WebElement waitForPresence(By locator) {
-		return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-	}
+    public WebElement presenceOfElementLocated(By locator) {
+        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
 
-	// Wait until element disappears
-	public boolean waitForInvisibility(By locator) {
-		return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
-	}
+    public boolean invisibilityOfElementLocated(By locator) {
+        return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+    }
 
-	// Wait until element contains text
-	public boolean waitForText(By locator, String text) {
-		return wait.until(ExpectedConditions.textToBePresentInElementLocated(locator, text));
-	}
+    public boolean waitForTextToBePresentInElementLocated(By locator, String text) {
+        return wait.until(ExpectedConditions.textToBePresentInElementLocated(locator, text));
+    }
 
-	// Wait until URL contains text
-	public boolean waitForUrlContains(String urlPart) {
-		return wait.until(ExpectedConditions.urlContains(urlPart));
-	}
+    public void  waitForUrlContains(String urlPart) {
+         wait.until(ExpectedConditions.urlContains(urlPart));
+    }
 
-	// Wait until URL is exactly equal
-	public boolean waitForUrlToBe(String url) {
-		return wait.until(ExpectedConditions.urlToBe(url));
-	}
+    public boolean waitForUrlToBe(String url) {
+        return wait.until(ExpectedConditions.urlToBe(url));
+    }
 
-	// Wait until page title contains text
-	public boolean waitForTitleContains(String title) {
-		return wait.until(ExpectedConditions.titleContains(title));
-	}
+    public boolean waitForTitleContains(String title) {
+        return wait.until(ExpectedConditions.titleContains(title));
+    }
 
-	// Wait until page title is exactly equal
-	public boolean waitForTitleToBe(String title) {
-		return wait.until(ExpectedConditions.titleIs(title));
-	}
+    public boolean waitForTitleToBe(String title) {
+        return wait.until(ExpectedConditions.titleIs(title));
+    }
 
-	// Wait for alert
-	public void waitForAlert() {
-		wait.until(ExpectedConditions.alertIsPresent());
-	}
+    public void waitForAlert() {
+        wait.until(ExpectedConditions.alertIsPresent());
+    }
 
-	// Wait until frame is available and switch
-	public void waitForFrame(By locator) {
-		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(locator));
-	}
+    public void waitForFrame(By locator) {
+        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(locator));
+    }
 
-	// Wait until number of windows
-	public boolean waitForNumberOfWindows(int count) {
-		return wait.until(ExpectedConditions.numberOfWindowsToBe(count));
-	}
+    public boolean waitForNumberOfWindows(int count) {
+        return wait.until(ExpectedConditions.numberOfWindowsToBe(count));
+    }
 }
