@@ -67,6 +67,7 @@
 				<configuration>
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
+						<scope>test</scope>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
