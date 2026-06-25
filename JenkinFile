@@ -12,7 +12,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                url: 'https://github.com/username/AutomationProject.git'
+                url: 'https://github.com/Ankushmh27/WebAutomationFrameworkByAnkush'
             }
         }
 
