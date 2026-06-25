@@ -2,23 +2,23 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Regression Test(failed)">
-    <groups>
-      <run>
-        <include name="Regression"/>
-        <exclude name="Sanity"/>
-      </run>
-    </groups>
     <classes>
-      <class name="testClass.LoginTest">
-        <methods>
-          <include name="userLoginTest"/>
-        </methods>
-      </class> <!-- testClass.LoginTest -->
       <class name="testClass.LogoutTest">
         <methods>
           <include name="userLogout"/>
         </methods>
       </class> <!-- testClass.LogoutTest -->
+      <class name="testClass.LoginTest">
+        <methods>
+          <include name="userLoginTest"/>
+        </methods>
+      </class> <!-- testClass.LoginTest -->
+      <class name="testClass.ValidInvalidLogin">
+        <methods>
+          <include name="loginWithValidCredentials"/>
+          <include name="loginWithInvalidCredentials"/>
+        </methods>
+      </class> <!-- testClass.ValidInvalidLogin -->
     </classes>
   </test> <!-- Regression Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
