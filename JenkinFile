@@ -1,0 +1,49 @@
+pipeline {
+
+    agent any
+
+    tools {
+        jdk 'JDK17'
+        maven 'Maven3'
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git branch: 'main',
+                url: 'https://github.com/username/AutomationProject.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'mvn clean'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                bat 'mvn test'
+            }
+        }
+
+        stage('Generate Report') {
+            steps {
+                junit '**/target/surefire-reports/*.xml'
+            }
+        }
+
+    }
+
+    post {
+
+        always {
+
+            archiveArtifacts artifacts: 'target/**'
+
+        }
+
+    }
+
+}
